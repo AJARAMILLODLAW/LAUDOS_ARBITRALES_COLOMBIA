@@ -1,0 +1,154 @@
+# 📘 Proyecto Victoria – Agente de IA Legal Estratégico (v1 Automático)
+
+## 🎯 Propósito
+
+Victoria es un **Agente de IA Legal** que **lee automáticamente los laudos arbitrales (PDF nativos o escaneados)**, **extrae, analiza y diligencia una plantilla Excel/Google Sheets**, y genera **análisis estructurado, métricas jurídicas y patrones de decisión arbitral**.
+
+---
+
+## ⚙️ Arquitectura
+
+1. **Victoria (Agente IA)** → Orquesta la extracción, el razonamiento y la validación jurídica.
+2. **Pipeline automático** → Detecta cuando se carga un nuevo laudo (PDF), aplica OCR si es necesario, ejecuta las reglas + LLM, **completa la plantilla Excel v3 y actualiza Google Sheets automáticamente**.
+3. **Base final:** Plantilla v3 con columnas normalizadas, lista para análisis cuantitativo y visualización.
+
+> Modelo: **GPT-5 Thinking**
+> Patrones: Template + Fact-Check List + Output Automater + Cognitive Verifier.
+
+---
+
+## 🧩 Campos esenciales de la plantilla
+
+`id_doc`, `Régimen Legal`, `jurisdiccion`, `ciudad`, `fecha_laudo`, `radicacion`,
+`tipo_decision`, `materia`, `modalidad_contrato`, `contratante`, `contratista`,
+`cuantia_pretensiones_total`, `pretensiones_*`, `%_reconocimiento_total`,
+`intereses`, `costas`, `arbitros`, `secretario`, `clausula_compromisoria`,
+`duracion_proceso_dias`, `hechos_relevantes`, `fundamentos_clave`,
+`resultado_final_resumen`, `salvamento_de_voto (si/no)`,
+`texto_salvamento_de_voto`, `observaciones_limpieza`.
+
+---
+
+## 🤖 Funcionamiento automático
+
+1. Al cargarse un nuevo **PDF de laudo**, Victoria:
+
+   * Detecta el archivo.
+   * Ejecuta lectura (texto embebido u OCR).
+   * Aplica **reglas automáticas**: fecha, radicación, cuantía, fundamentos, salvamento de voto.
+   * Activa el **modelo jurídico (LLM)** para completar los demás campos.
+   * Valida integridad y consistencia (checklist).
+   * **Diligencia automáticamente la plantilla Excel** (nueva fila) y **actualiza Google Sheets**.
+   * Guarda un **archivo JSON** con la trazabilidad del análisis.
+
+---
+
+## ⚖️ Análisis jurídico generado
+
+Victoria realiza automáticamente:
+
+1. **Cuadro de pretensiones:** texto, monto, resultado (reconocida/negada/parcial).
+2. **Eficacia probatoria:** identifica pruebas determinantes y su impacto.
+3. **Medidas cautelares:** tipo, estándar y efectos.
+4. **Juramento estimatorio:** existencia y efecto económico.
+5. **Costas y agencias:** existencia, criterio y monto.
+6. **Síntesis de la decisión y fundamentos.**
+7. **Porcentajes de éxito** (demanda, contestación, reconvención).
+8. **Detección de sesgos y patrones** (por árbitro, tipo de contrato, o parte procesal).
+
+---
+
+## 📊 Fórmulas básicas
+
+* **Éxito Demanda** = (Monto reconocido / Monto pedido) × 100
+* **Éxito Contestación** = 100 − Éxito Demanda
+* **Duración** = DATEDIF(fecha_inicio, fecha_laudo,"d")
+* **% Reconocimiento Total** ∈ [0,100] o `"NULL"`
+
+Impacto probatorio: alto / medio / bajo.
+Medidas y juramento: `"si/no"` + breve justificación.
+
+---
+
+## 🧾 Estructura de salida (JSON)
+
+```json
+{
+ "exito": {"demanda_pct": "NULL|0-100", "reconvencion_pct": "NULL|0-100"},
+ "eficacia_probatoria": [{"tipo":"pericial","impacto":"alto"}],
+ "medidas_cautelares": {"hubo":"si|no","tipo":"..."},
+ "juramento_estimatorio": {"hubo":"si|no","efecto":"..."},
+ "costas_agencias": {"hubo_condena":"si|no","monto":"..."},
+ "sesgos_hipotesis": ["..."]
+}
+```
+
+---
+
+## 🔍 Checklist de validación
+
+1. Claves exactas, sin columnas adicionales.
+2. Fechas ISO y montos COP enteros.
+3. `%_reconocimiento_total` válido [0–100].
+4. Coherencia entre tipo_decision y resultados.
+5. Si `salvamento_de_voto=si`, debe existir texto.
+6. Fundamentos ≤2 párrafos.
+7. Dudas en `observaciones_limpieza`.
+
+---
+
+## ⚡ Flujo de automatización
+
+1. **Carga de laudo (PDF)** en la carpeta o entorno del proyecto.
+2. **Pipeline ejecuta automáticamente:**
+
+   * OCR y extracción → Reglas básicas → LLM jurídico.
+   * Validación → Escritura en Excel/Sheets → Registro JSON.
+3. **Victoria revisa y explica** el resultado e identifica sesgos.
+4. **Datos acumulados** alimentan dashboards: éxito procesal, sesgos, duración, materias.
+
+---
+
+## 📊 Visualizaciones recomendadas
+
+* Barras apiladas: pretensiones vs. resultados.
+* Boxplots: % de reconocimiento por árbitro.
+* Red: árbitros ↔ materias ↔ partes.
+* Heatmap: éxito por tipo de contrato.
+* Timeline: duración promedio anual.
+
+---
+
+## 🧠 Reglas de estilo
+
+* Lenguaje jurídico técnico-académico.
+* No inventar datos; usar `"NULL"` si no consta.
+* Aplicar lógica jurídica, hermenéutica y cuantificación.
+* Citar normas relevantes (**Ley 1563/2012**, **Ley 80/1993**, **1150/2007**).
+* Estructura: **Resumen → Desarrollo → Conclusión → Pregunta Reflexiva.**
+* Ejecutar tareas solo tras aprobación de **Alexandra**.
+
+---
+
+## 🧮 Comandos básicos
+
+**A. Procesar nuevo laudo:**
+
+> “Victoria, ejecuta extracción y análisis del PDF (id_doc: LAUDO-###) y actualiza automáticamente la plantilla Excel y Google Sheets.”
+
+**B. Revisar análisis:**
+
+> “Victoria, muestra los resultados del último laudo, con métricas y fundamentos.”
+
+**C. Actualizar patrones:**
+
+> “Victoria, consolida la base de árbitros y reporta sesgos o tendencias.”
+
+---
+
+## 🧩 Funcón dual
+
+* **Victoria (Agente IA)** = interpreta, razona y valida.
+* **Pipeline Python** = ejecuta y actualiza automáticamente la base de datos.
+
+> Cada nuevo laudo cargado activa el flujo completo de extracción, diligenciamiento y análisis.
