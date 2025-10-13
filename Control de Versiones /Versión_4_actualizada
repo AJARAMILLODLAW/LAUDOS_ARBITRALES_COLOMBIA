@@ -1,0 +1,61 @@
+> 🗂️ **“Registro de versión – Proyecto Victoria”**
+
+Esta hoja funcionará como el **control documental y trazabilidad oficial** del proyecto, reflejando las versiones, responsables, objetivos, y los cambios metodológicos o técnicos implementados.
+
+---
+
+# 🗂️ Registro de Versión – Proyecto Victoria
+
+| Campo                         | Descripción                                                                                                                                                                                               |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Nombre del Proyecto**       | *Victoria – Agente de IA Legal Estratégico (AutoLegal Analytics)*                                                                                                                                         |
+| **Versión actual**            | v4.0 Automático                                                                                                                                                                                           |
+| **Fecha de aprobación**       | 13 de octubre de 2025                                                                                                                                                                                     |
+| **Responsable técnico**       | Alexandra Jaramillo Díaz                                                                                                                                                                                  |
+| **Rol de Victoria**           | Agente de IA Legal Estratégico (GPT-5 Thinking)                                                                                                                                                           |
+| **Objetivo del sistema**      | Automatizar la extracción, estructuración y análisis jurídico de laudos arbitrales en formato PDF (nativos o escaneados), generando una base consolidada y análisis automatizados en Excel/Google Sheets. |
+| **Alcance funcional**         | Lectura automática de laudos → extracción estructurada → diligenciamiento de la hoja `Laudos` → generación del análisis individual `LAUDO_<id_doc>` → actualización de `Dashboard`.                       |
+| **Estado de la versión**      | Activa y operativa (sin requerimiento de Python).                                                                                                                                                         |
+| **Integración**               | 100 % compatible con Google Sheets. Actualización manual mediante comandos de Victoria.                                                                                                                   |
+| **Nivel de automatización**   | Completo: detección de PDF, extracción de datos, llenado automático, análisis y visualización.                                                                                                            |
+| **Versión del modelo**        | GPT-5 Thinking                                                                                                                                                                                            |
+| **Nivel de revisión**         | Aprobado por Alexandra Jaramillo Díaz                                                                                                                                                                     |
+| **Uso previsto**              | Análisis jurídico-estratégico, detección de sesgos, patrones de decisión arbitral y métricas de desempeño procesal.                                                                                       |
+| **Próxima revisión estimada** | Enero de 2026                                                                                                                                                                                             |
+
+---
+
+## 📊 Trazabilidad de versiones
+
+| Versión           | Fecha            | Autor / Responsable          | Descripción de cambios principales                                                                                                                                                     |
+| ----------------- | ---------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| v1.0              | Julio 2025       | Alexandra Jaramillo Díaz     | Diseño base del agente “Victoria” y pipeline Python con OCR + LLM.                                                                                                                     |
+| v2.0              | Agosto 2025      | Alexandra Jaramillo Díaz     | Integración de salvamento de voto y texto completo.                                                                                                                                    |
+| v3.0              | Septiembre 2025  | Alexandra Jaramillo Díaz     | Estandarización de plantilla Excel con columnas v3 + conexión a Sheets.                                                                                                                |
+| **v4.0 (actual)** | **Octubre 2025** | **Alexandra Jaramillo Díaz** | Eliminadas pretensiones → incorporado campo `temas` (tags jurídicos). Añadidas hojas automáticas por laudo. Dashboard integrado sin uso de Python. Flujo automático al subir cada PDF. |
+| v4.1 (prevista)   | Diciembre 2025   | Alexandra Jaramillo Díaz     | Inclusión de nuevos campos analíticos (árbitros, cámara, cuantía consolidada, jurisprudencia citada) y dashboards avanzados Power BI.                                                  |
+
+---
+
+## 🔍 Observaciones del control documental
+
+* La versión v4 constituye la **base consolidada oficial** del proyecto Victoria.
+* Cada actualización futura deberá registrarse con fecha, descripción y firma digital o validación por parte de Alexandra.
+* Se recomienda **resguardar copias trimestrales** del libro para control de versiones.
+* El agente Victoria genera automáticamente metadatos de fecha y fuente del laudo (columna `fuente_pdf`).
+* Cualquier modificación estructural del libro (nombres de hojas, columnas o dashboards) debe quedar anotada en esta hoja para mantener trazabilidad analítica.
+
+---
+
+## 📜 Declaración del responsable
+
+> “Certifico que la versión **v4.0 Automático** de la plantilla *Victoria AutoLegal Analytics* refleja fielmente el alcance actual del Agente Victoria y su flujo operativo sin código. Esta versión queda autorizada como base oficial del proyecto, susceptible de mejora continua conforme a la evolución de los análisis y resultados.”
+
+**Firmado electrónicamente por:**
+**Alexandra Jaramillo Díaz**
+Responsable Técnica del Proyecto Victoria
+*13 de octubre de 2025*
+
+---
+
+¿Deseas que ahora te genere la **actualización del archivo Excel** incorporando esta hoja “🗂️ Registro de versión – Proyecto Victoria” como primera pestaña (antes de `Laudos`)?
