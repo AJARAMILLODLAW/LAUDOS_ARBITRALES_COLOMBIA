@@ -1,0 +1,170 @@
+Una **taxonomía de temas** (tags jurídicos) te permitirá crear un sistema de clasificación **coherente, trazable y analíticamente potente**, ideal para minería de texto y visualización legal posterior.
+
+Aquí tienes la **versión inicial de la lista de temas estandarizados**, estructurada según tu enfoque jurídico–estratégico y preparada para integrarse en el Excel/Sheets como **lista de validación o menú desplegable**.
+
+---
+
+# 🧩 Taxonomía base – “Temas” (tags jurídicos normalizados)
+
+Cada tema se separará con **punto y coma (;)** en la celda `temas`.
+Ejemplo de uso:
+
+> `equilibrio económico; medidas cautelares; costas; agencias en derecho`
+
+---
+
+## ⚖️ **1. Estructura del proceso arbitral**
+
+* competencia del tribunal
+* trámite procesal
+* excepciones previas
+* recursos procesales
+* caducidad y prescripción
+* suspensión del proceso
+* recusación de árbitros
+* salvamento de voto
+* aclaración y corrección del laudo
+
+---
+
+## 💰 **2. Pretensiones y resultados**
+
+* reconocimiento de sumas
+* incumplimiento contractual
+* desequilibrio económico
+* restablecimiento del equilibrio
+* revisión de fórmulas tarifarias
+* reajuste de precios
+* prórrogas y terminación
+* reconvención
+* nulidad del contrato
+
+---
+
+## 🧱 **3. Contratos y modalidades**
+
+* concesión vial
+* concesión aeroportuaria
+* concesión portuaria
+* obra pública
+* interventoría
+* consultoría
+* suministro
+* operación y mantenimiento
+* servicios TIC
+* energía y gas
+* transporte y logística
+
+---
+
+## 📊 **4. Cuestiones económicas y financieras**
+
+* cuantía y valoración de perjuicios
+* liquidación bilateral
+* riesgos contractuales
+* ingresos esperados
+* sobrecostos y lucro cesante
+* tasa de descuento
+* revisión de tarifas
+* pagos pendientes
+* equilibrio financiero
+
+---
+
+## 🧾 **5. Prueba y valoración**
+
+* eficacia probatoria
+* prueba pericial
+* prueba documental
+* prueba testimonial
+* carga de la prueba
+* valoración conjunta
+* prueba contable o técnica
+
+---
+
+## 🛡️ **6. Medidas y garantías**
+
+* medidas cautelares
+* cauciones
+* pólizas de cumplimiento
+* garantías contractuales
+* penalidades
+* fuerza mayor
+* imprevisión
+
+---
+
+## ⚙️ **7. Responsabilidad**
+
+* responsabilidad contractual
+* responsabilidad extracontractual
+* culpa del contratista
+* culpa de la administración
+* caso fortuito
+* dolo y mala fe
+
+---
+
+## 💼 **8. Costas y agencias**
+
+* costas procesales
+* agencias en derecho
+* condena en costas
+* distribución de gastos
+* honorarios de árbitros
+
+---
+
+## 🧩 **9. Aspectos institucionales**
+
+* cámara de comercio
+* reglamento arbitral
+* ley aplicable
+* competencia arbitral
+* jurisdicción y ley aplicable
+* principios del derecho público
+* normas del derecho privado
+
+---
+
+## 🧠 **10. Temas transversales de análisis**
+
+* sesgos de decisión
+* patrones de reconocimiento
+* motivación del laudo
+* coherencia argumentativa
+* transparencia y debida motivación
+* precedentes relevantes
+* jurisprudencia citada
+
+---
+
+## 📚 **11. Variables analíticas complementarias**
+
+* duración del proceso
+* éxito procesal (%)
+* cuantía reconocida
+* interés reconocido
+* tipo de régimen legal
+* impacto económico agregado
+* materia dominante
+
+---
+
+## 💡 Implementación recomendada en Excel/Sheets
+
+1. Agregar una hoja nueva (oculta o visible) llamada **`_temas`**.
+2. Pegar la lista anterior (una por celda en columna A).
+3. Crear un **rango con nombre**: `rng_temas`.
+4. Aplicar **validación de lista** en la columna `temas` de `Laudos`, fuente:
+
+   ```
+   =rng_temas
+   ```
+
+   (En Google Sheets se puede usar `Datos → Validación → Lista de intervalos → _temas!A1:A100`).
+
+---
+
+¿Deseas que te genere ahora una **versión actualizada del Excel** con esta hoja `_temas` ya integrada (como lista de validación visible para edición y estandarización)?
