@@ -1,0 +1,52 @@
+¡Actualizado y listo para probar, Alexandra! ✅
+
+📘 **Descargar el libro corregido**
+👉 **[Data_Science_Laudos_Colombia_v4.4_AJaramilloD.xlsx](sandbox:/mnt/data/Data_Science_Laudos_Colombia_v4.4_AJaramilloD.xlsx)**
+
+### Cambios aplicados (según tu instrucción)
+
+**Hoja `LAUDO_PLANTILLA`**
+
+* Sección **Pretensiones – DEMANDA**
+
+  * Columna “**Pretensión (texto literal)**” para copiar exactamente del laudo.
+  * Columna “**Resultado**” con lista desplegable: *concedida / negada / parcialmente concedida*.
+  * 12 filas listas (ampliables).
+* Sección **Pretensiones – DEMANDA DE RECONVENCIÓN** (si aplica)
+
+  * Mismo esquema: texto literal + resultado con desplegable.
+  * 12 filas listas (ampliables).
+* **Métricas de éxito** actualizadas para **considerar reconvención** si existe (mantengo campos explícitos para que Victoria calcule los porcentajes a partir de los resultados consignados).
+* Se mantienen **Eficacia probatoria**, **Medidas cautelares**, **Juramento estimatorio**, **Costas y agencias**, **Decisión final** y **Salvamento** con sus validaciones (sí/no, impacto alto/medio/bajo, etc.).
+
+**Hoja `Laudos` (consolidado)**
+
+* ✅ **Primera columna** ahora es **`año_laudo`**.
+* ✅ **Eliminada** la antigua columna **PDF** (`fuente_pdf`).
+* ✅ Nueva columna: **`terceros (litisconsortes/garantía/coadyuvantes)`**.
+
+**Validaciones activas (todas con Calibri 12, texto justificado, encabezados en degradé)**
+
+* `Régimen Legal`, `Tipo de decisión`, `Salvamento de voto`, `Modalidad`, `Ciudad`, `Cámara`, `Materia`, `Temas`.
+* En `LAUDO_PLANTILLA`: además `Resultado (pretensiones)` y `Impacto` en eficacia probatoria, y `sí/no` en bloques procesales.
+
+**Registro de versión**
+
+* Subido a **v4.4** con trazabilidad de los cambios (pretensiones + reconvención; métricas; año_laudo; terceros; eliminación PDF).
+
+---
+
+## Listo para la primera prueba
+
+Comparte el **PDF del laudo** y di:
+
+> “Victoria, procesa el laudo PDF adjunto, llena automáticamente la hoja `Laudos` en mi plantilla, y genera el reporte en la hoja `Análisis Automático`.”
+
+Yo:
+
+1. Extraeré el texto (OCR si hace falta).
+2. Completaré **`Laudos`** (incluyendo `año_laudo`, `temas`, `terceros`).
+3. Crearé la hoja **`LAUDO_<id_doc>`**, diligenciando **pretensiones** (demanda y reconvención), **resultados**, y **métricas de éxito** integrales.
+4. Dejaré el **Dashboard** listo.
+
+Si luego quieres **agregar, corregir o suprimir** valores de las listas desplegables (ciudad, cámara, materia, temas, resultados), me das la instrucción y preparo **v4.5** con tu confirmación.
